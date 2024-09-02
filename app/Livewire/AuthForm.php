@@ -47,13 +47,15 @@ class AuthForm extends Component
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $this->name,
             'email' => $this->email,
             'password' => Hash::make($this->password),
         ]);
 
-        return redirect()->route('login');
+        Auth::login($user); // Autentica o usuário
+
+        return redirect('/'); // Redireciona para a página principal
     }
 
     public function render()

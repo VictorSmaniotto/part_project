@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Livewire\AuthForm;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
@@ -20,4 +21,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', function(){
         return view('site.index');
     });
+    Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 });
