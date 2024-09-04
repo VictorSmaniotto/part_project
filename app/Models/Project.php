@@ -11,8 +11,18 @@ class Project extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'title', 'description', 'archive_path', 'course_id', 'professor_id', 'project_type'
+        'title',
+        'description',
+        'file_path',
+        'course_id',
+        'professor_id',
+        'project_type',
     ];
+
+    public function team()
+    {
+        return $this->hasOne(Team::class);
+    }
 
     public function course()
     {

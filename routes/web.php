@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use App\Livewire\AuthForm;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
+use App\Livewire\EnviarTrabalho;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 
 // Route::get('/', function () {
@@ -22,4 +23,5 @@ Route::middleware(['auth'])->group(function () {
         return view('site.index');
     });
     Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+    Route::get('/enviar-trabalho', EnviarTrabalho::class)->name('enviar-trabalho');
 });

@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title', 255);
             $table->text('description')->nullable();
-            $table->string('archive_path')->nullable();
+            $table->string('file_path')->nullable();
             $table->foreignId('course_id')->constrained();
             $table->foreignId('professor_id')->constrained('users');
+            $table->foreignId('team_id')->nullable()->constrained(); 
             $table->enum('project_type', ['TCC', 'Projeto Integrador', 'Pesquisa', 'Seminário', 'Voluntário'])->default('Projeto Integrador');
             $table->softDeletes();
             $table->timestamps();
