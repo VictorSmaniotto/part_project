@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public function teams()
     {
-        return $this->belongsToMany(Team::class, 'team_user');
+        return $this->belongsToMany(Team::class, 'team_users');
     }
 
     public function comments()
@@ -80,10 +80,15 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    public function likes()
-    {
-        return $this->hasMany(Like::class);
-    }
+    // public function likes()
+    // {
+    //     return $this->hasMany(Like::class);
+    // }
+
+    public function likedProjects()
+{
+    return $this->belongsToMany(Project::class, 'likes');
+}
 
     public function shares()
     {

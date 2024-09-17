@@ -10,7 +10,7 @@
     @livewireStyles
 </head>
 
-<body class="flex flex-col min-h-screen text-gray-900 bg-gray-100">
+<body class="flex flex-col min-h-screen text-gray-900 bg-gray-100 container-fluid">
     <div x-data="{ open: false }">
         <header class="bg-gray-900 shadow">
             <div class="container flex items-center justify-between px-4 py-6 mx-auto">
@@ -31,7 +31,7 @@
     </div>
     
 
-        <main class="container flex items-center justify-center flex-grow w-full px-4 py-6 mx-auto">
+        <main class="flex items-center justify-center flex-grow w-full px-4 py-6 mx-auto">
             @yield('content')
         </main>
 

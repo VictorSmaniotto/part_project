@@ -17,11 +17,18 @@ class Project extends Model
         'course_id',
         'professor_id',
         'project_type',
+        'rating',
     ];
 
     public function team()
     {
-        return $this->hasOne(Team::class);
+        // return $this->hasOne(Team::class);
+        return $this->belongsTo(Team::class);
+    }
+
+    public function users()
+    {
+        return $this->hasManyThrough(User::class, TeamUser::class, 'team_id', 'id', 'team_id', 'user_id');
     }
 
     public function course()
@@ -41,7 +48,7 @@ class Project extends Model
 
     public function likes()
     {
-        return $this->hasMany(Like::class);
+        return $this->belongsToMany(User::class, 'likes');
     }
 
     public function shares()

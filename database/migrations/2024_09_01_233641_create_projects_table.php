@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreignId('professor_id')->constrained('users');
             $table->foreignId('team_id')->nullable()->constrained(); 
             $table->enum('project_type', ['TCC', 'Projeto Integrador', 'Pesquisa', 'Seminário', 'Voluntário'])->default('Projeto Integrador');
+            $table->string('rating')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
