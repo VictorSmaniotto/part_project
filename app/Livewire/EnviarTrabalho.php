@@ -73,6 +73,8 @@ class EnviarTrabalho extends Component
 
         // Dispara o evento para resetar os campos do SelectTeamMember
         $this->dispatch('resetTeamMembers');
+
+        redirect()->route('projetos');
     }
 
     public function render()

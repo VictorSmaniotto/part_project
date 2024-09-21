@@ -25,6 +25,7 @@ class AuthForm extends Component
 
     public function toggleForm()
     {
+        $this->resetValidation();
         $this->isRegister = !$this->isRegister;
     }
 

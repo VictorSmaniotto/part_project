@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('file_path')->nullable();
             $table->foreignId('course_id')->constrained();
-            $table->foreignId('professor_id')->constrained('users');
+            $table->foreignId('professor_id')->constrained('users')->default('2');
             $table->foreignId('team_id')->nullable()->constrained(); 
             $table->enum('project_type', ['TCC', 'Projeto Integrador', 'Pesquisa', 'Seminário', 'Voluntário'])->default('Projeto Integrador');
             $table->string('rating')->nullable();

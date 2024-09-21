@@ -8,28 +8,28 @@
                     <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
                     <input wire:model='name' type="text" name="name" class="w-full p-1 mt-1 text-gray-900 border border-gray-300 rounded" required>
                     @error('name')
-                        <span class="error">{{ $message }}</span>
+                        <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
                     <input wire:model='email' type="text" name="email" class="w-full p-1 mt-1 text-gray-900 border border-gray-300 rounded" required>
                     @error('email')
-                        <span class="error">{{ $message }}</span>
+                        <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-700">Senha</label>
                     <input wire:model='password' type="password" class="w-full p-1 mt-1 text-gray-900 border border-gray-300 rounded" required>
                     @error('password')
-                        <span class="error">{{ $message }}</span>
+                        <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-700">Confirme sua senha</label>
                     <input wire:model='password_confirmation' type="password" class="w-full p-1 mt-1 text-gray-900 border border-gray-300 rounded" required>
                     @error('password_confirmation')
-                        <span class="error">{{ $message }}</span>
+                        <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
                 <button type="submit" class="w-full px-4 py-2 text-sm text-white bg-red-500 rounded-lg hover:bg-blue-700">Registrar</button>
@@ -56,14 +56,14 @@
                     <label class="block text-sm font-medium text-gray-700">Email</label>
                     <input wire:model='email' type="email" class="w-full p-1 mt-1 text-gray-900 border border-gray-300 rounded" required>
                     @error('email')
-                        <span class="error">{{ $message }}</span>
+                        <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-gray-700">Senha</label>
                     <input wire:model='password' type="password" class="w-full p-1 mt-1 text-gray-900 border border-gray-300 rounded" required>
                     @error('password')
-                        <span class="error">{{ $message }}</span>
+                        <span class="text-sm text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
                 <button type="submit" class="px-4 py-2 mt-4 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-700">Login</button>
